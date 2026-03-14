@@ -42,13 +42,13 @@ noBtn.addEventListener("click",moveNo)
 
 yesBtn.addEventListener("click",()=>{
 
-fetch("https://formspree.io/f/YOUR_FORM_ID",{
+fetch("https://formspree.io/f/xyknwykv",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
 body:JSON.stringify({
-message:"She clicked YES ❤️"
+message:"She Said YES ❤️"
 })
 })
 
