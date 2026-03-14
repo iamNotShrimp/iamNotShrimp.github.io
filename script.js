@@ -40,6 +40,8 @@ noBtn.addEventListener("click",moveNo)
 
 
 
+const video=document.querySelector("video")
+
 yesBtn.addEventListener("click",()=>{
 
 fetch("https://formspree.io/f/YOUR_FORM_ID",{
@@ -48,7 +50,7 @@ headers:{
 "Content-Type":"application/json"
 },
 body:JSON.stringify({
-message:"She clicked YES ❤️"
+message:"She Said YES ❤️"
 })
 })
 
@@ -59,6 +61,9 @@ setTimeout(()=>{
 
 loader.style.display="none"
 result.style.display="block"
+
+video.currentTime = 0
+video.play()
 
 },3000)
 
