@@ -4,53 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="do_you_love_me.css">
-
 <title>💌 A Question For You</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <canvas id="particles"></canvas>
 
-<div class="question-container container">
+<div class="container question-container">
 
 <div class="tenor-gif-embed"
 data-postid="25789758"
 data-share-method="host"
-data-width="100%">
-</div>
+data-width="100%"></div>
 
 <script async src="https://tenor.com/embed.js"></script>
 
-<h2 class="question">Do you love me?</h2>
+<h2>Do you love me?</h2>
 
-<div class="button-container">
-
-<button class="yes-btn btn js-yes-btn">Yes</button>
-
-<button class="no-btn btn js-no-btn">No</button>
-
-</div>
+<div class="buttons">
+<button class="yes-btn">Yes</button>
+<button class="no-btn">No</button>
 </div>
 
-<div class="result-container container">
-<video class="gif-result" src="cute love gif.mp4" autoplay loop></video>
-<h2>I knew it 😍!</h2>
 </div>
 
-<div class="cssload-main">
-<div class="cssload-heart">
-<span class="cssload-heartL"></span>
-<span class="cssload-heartR"></span>
-<span class="cssload-square"></span>
-</div>
-<div class="cssload-shadow"></div>
+<div class="container result-container">
+
+<video src="cute love gif.mp4" autoplay loop></video>
+
+<h2>I knew it 😍</h2>
+
 </div>
 
-<script src="do_you_love_me.js"></script>
+<div class="loader">
+<div class="heart"></div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
