@@ -71,6 +71,9 @@ margin-bottom:20px;
 .loader{
 display:none;
 position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 }
 
 .heart{
@@ -93,6 +96,10 @@ border-radius:50%;
 
 .heart:before{
 top:-30px;
+}
+
+.tenor-gif-embed{
+pointer-events:none;
 }
 
 .heart:after{
