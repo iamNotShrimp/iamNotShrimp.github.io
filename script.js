@@ -42,13 +42,13 @@ noBtn.addEventListener("click",moveNo)
 
 yesBtn.addEventListener("click",()=>{
 
-fetch("https://formspree.io/f/xyknwykv",{
+fetch("https://formspree.io/f/YOUR_FORM_ID",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
 body:JSON.stringify({
-message:"She Said YES ❤️"
+message:"She clicked YES ❤️"
 })
 })
 
@@ -78,11 +78,14 @@ let particles=[]
 
 for(let i=0;i<70;i++){
 
+const colors=["#ff6b81","#ff4757","#ff8fa3","#ffb3c1","#ff0a54"]
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-r:Math.random()*3+1,
-d:Math.random()*0.7
+r:Math.random()*6+3,
+d:Math.random()*0.7+0.3,
+angle:Math.random()*Math.PI*2,
+color:colors[Math.floor(Math.random()*colors.length)]
 })
 
 }
@@ -95,9 +98,17 @@ ctx.fillStyle="rgba(255,182,193,.8)"
 
 particles.forEach(p=>{
 
+ctx.save()
+ctx.translate(p.x, p.y)
+ctx.rotate(p.angle)
+ctx.scale(p.r*0.05, p.r*0.05)
+ctx.fillStyle=p.color
 ctx.beginPath()
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
+ctx.moveTo(0,-10)
+ctx.bezierCurveTo(10,-20,25,-5,0,15)
+ctx.bezierCurveTo(-25,-5,-10,-20,0,-10)
 ctx.fill()
+ctx.restore()
 
 p.y+=p.d
 
