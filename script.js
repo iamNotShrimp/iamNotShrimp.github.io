@@ -3,7 +3,7 @@ const noBtn=document.querySelector(".no-btn")
 
 const question=document.querySelector(".question-container")
 const result=document.querySelector(".result-container")
-const loader=document.querySelector(".loader")
+const loader = document.querySelector(".cssload-main")
 
 const noTexts=[
 "No",
@@ -40,38 +40,31 @@ noBtn.addEventListener("click",moveNo)
 
 
 
-const gifResult = document.querySelector(".gif-result");
-const heartLoader = document.querySelector(".cssload-main");
-const video = document.querySelector("video");
+yesBtn.addEventListener("click",()=>{
 
-yesBtn.addEventListener("click", () => {
+fetch("https://formspree.io/f/YOUR_FORM_ID",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+message:"She clicked YES ❤️"
+})
+})
 
-  // send Formspree message silently
-  fetch("https://formspree.io/f/YOUR_FORM_ID", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      message: "She Said YES ❤️"
-    })
-  });
+question.style.display="none"
+loader.style.display="block"
 
-  // hide question and show love animation
-  question.style.display = "none";
-  heartLoader.style.display = "inherit";
+setTimeout(() => {
+  loader.style.display = "none"
+  result.style.display = "block"
 
-  setTimeout(() => {
+  const video = document.querySelector("video")
+  video.currentTime = 0
+  video.play()
+}, 3000)
 
-    heartLoader.style.display = "none";
-    result.style.display = "inherit";
-
-    video.currentTime = 0;
-    video.play();
-
-  }, 3000);
-
-});
+})
 
 
 
